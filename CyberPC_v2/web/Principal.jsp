@@ -50,7 +50,7 @@
                         
                         <li class="nav-item">
                             
-                           <a class="nav-link bi bi-bag-plus-fill" href="" target="myFrame"> Tipo Producto</a>
+                           <a class="nav-link bi bi-bag-plus-fill" href="Controlador?menu=TipoProducto&accion=Listar" target="myFrame"> Tipo Producto</a>
                             
                         </li>
                         
