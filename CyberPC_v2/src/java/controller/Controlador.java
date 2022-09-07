@@ -89,7 +89,7 @@ public class Controlador extends HttpServlet {
                     emp.setNombresEmpleado(nombresEmpleado);
                     emp.setTelefonoEmpleado(telefonoEmpleado);
                     emp.setEmailEmpleado(emailEmpleado);
-                    emp.setContrasenaEmpleado(nombresEmpleado);
+                    emp.setContrasenaEmpleado(contrasenaLogin);
 
                     empDAO.agregar(emp);
 
