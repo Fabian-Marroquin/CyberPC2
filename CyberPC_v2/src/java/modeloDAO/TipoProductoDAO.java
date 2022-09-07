@@ -41,7 +41,7 @@ public class TipoProductoDAO {
         
         //metodo para agregar       
         public int agregar(TipoProducto tp){
-            String sql = "Insert into tipoproducto(tipoProducto) values (?)";
+            String sql = "Insert into tipoproducto(descripcionTipoProducto) values (?)";
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
