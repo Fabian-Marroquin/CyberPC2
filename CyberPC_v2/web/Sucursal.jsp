@@ -41,9 +41,9 @@
                     <thead>
                         <br>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">NOMBRE</td>
-                            <td class="table-primary text-center">DIRECCION</td>
+                            <td class="table-primary text-center">DIRECCIÓN</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>
                     </thead>

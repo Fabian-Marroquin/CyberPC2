@@ -23,7 +23,7 @@
                     <br>
                     <form action="Controlador?menu=Marca" method="POST">
                         <div class="form-group">
-                            <label>Descripcion Marca:</label>
+                            <label>Descripción Marca:</label>
                             <input type="text" name="txtDescripcion" class="form-control">  
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>

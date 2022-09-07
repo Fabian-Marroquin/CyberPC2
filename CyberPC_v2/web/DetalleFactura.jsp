@@ -28,12 +28,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Codigo Factura:</label>
+                            <label>Código Factura:</label>
                             <input type="text" name="txtCodigoFactura" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label>Codigo Producto:</label>
+                            <label>Código Producto:</label>
                             <input type="text" name="txtCodigoProducto" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
@@ -47,10 +47,10 @@
                     <br>
                     <thead>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">CANTIDAD</td>
-                            <td class="table-primary text-center">CODIGO FACTURA</td>
-                            <td class="table-primary text-center">CODIGO PRODUCTO</td>
+                            <td class="table-primary text-center">CÓDIGO FACTURA</td>
+                            <td class="table-primary text-center">CÓDIGO PRODUCTO</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>
                     </thead>
