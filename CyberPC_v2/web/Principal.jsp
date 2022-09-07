@@ -56,13 +56,13 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-tags-fill" href="" target="myFrame" > Marca</a>
+                            <a class="nav-link bi bi-tags-fill" href="Controlador?menu=Marca&accion=Listar" target="myFrame" > Marca</a>
                             
                         </li>
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-tags-fill" href="" target="myFrame"> Sucursal</a>
+                            <a class="nav-link bi bi-tags-fill" href="Controlador?menu=Sucursal&accion=Listar" target="myFrame"> Sucursal</a>
                             
                         </li>
                         
