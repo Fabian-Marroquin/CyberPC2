@@ -19,28 +19,28 @@
         <div class="card col-sm-4">
             <div class="card-body">
                 
-                     <h2 class="text-center">Facturas</h2>
+                     <h2 class="text-center">Productos</h2>
                     <br>
                     <form action="Controlador?menu=Producto" method="POST">
 
                             <div class="form-group">
-                            <label> NOMBRE:</label>
+                            <label> Nombre:</label>
                                 <input type = "text" name = "txtNombreProducto" class="form-control">
                             </div>
                              <div class="form-group">
-                                 <label> STOCK:</label>
+                                 <label> Stock:</label>
                                 <input type = "text" name = "txtStock" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label> PRECIO:</label>
+                                <label> Precio:</label>
                                 <input type = "text" name = "txtPrecio" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label> TIPO DE PRODUCTO:</label>
+                                <label> Tipo de producto:</label>
                                 <input type = "text" name = "txtTipoProducto" class="form-control">
                             </div>
                              <div class="form-group">
-                                <label> MARCA:</label>
+                                <label> Marca:</label>
                                 <input type = "text" name = "txtMarca" class="form-control">
                             </div>
                             <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
@@ -53,7 +53,7 @@
                     <thead>
                     <br>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">NOMBRE</td>
                             <td class="table-primary text-center">STOCK</td>
                             <td class="table-primary text-center">PRECIO</td>
@@ -74,7 +74,7 @@
                             <td class="text-center table-light">${producto.getCodigoMarca()}</td>
                             
                             
-                            <td>
+                            <td class="text-center table-light">
                                 <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
                                 <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
                             </td>

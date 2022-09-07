@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel=stylesheet type="text/css" href="css/styleVistas.css">
 
-        <title>Vista Tipo de Pago</title>
+        <title>Tipo de Pago</title>
     </head>
     <body>
         
@@ -26,16 +26,19 @@
                 
                 <div class="card-body">
                     
+                    <h2 class="text-center">Tipos de Pago</h2>
+                    <br>
+                    
                     <form action="Controlador?menu=TipoPago" method="POST">
-                        
                         
                         <div class="form-group">
                             <label>Tipo de Pago:</label>
                             <input type="next" name="txtTipoPago" class="form-control">
                         </div>
                         
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                        <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
+                        <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
+                        
                     </form>
                     
                 </div>
@@ -47,11 +50,13 @@
                     
                     <thead>
                         
+                    <br>
+                        
                         <tr>
                             
-                            <td>Codigo:</td>
-                            <td>Tipo de Pago:</td>
-                            <td>Acciones</td>
+                            <td class="table-primary text-center">CÓDIGO:</td>
+                            <td class="table-primary text-center">TIPO DE PAGO:</td>
+                            <td class="table-primary text-center">ACCIONES</td>
                             
                         </tr>
                         
@@ -63,14 +68,14 @@
                         
                         <tr>
                             
-                            <td>${tiposPago.getCodigoTipoPago()}</td>
-                            <td>${tiposPago.getDescripcionTipoPago()}</td>
+                            <td class="text-center table-light">${tiposPago.getCodigoTipoPago()}</td>
+                            <td class="text-center table-light">${tiposPago.getDescripcionTipoPago()}</td>
                             
 
-                            <td>
+                            <td class="text-center table-light">
                                 
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
                                 
                             </td>
                             
