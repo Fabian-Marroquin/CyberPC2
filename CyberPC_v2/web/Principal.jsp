@@ -74,7 +74,7 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-file-post-fill" href="" target="myFrame"> Factura</a>
+                            <a class="nav-link bi bi-file-post-fill" href="Controlador?menu=Factura&accion=Listar" target="myFrame"> Factura</a>
                             
                         </li>
                         
