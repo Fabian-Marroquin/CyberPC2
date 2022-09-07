@@ -19,7 +19,7 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <h2 class="text-center">Cliente</h2>
+                    <h2 class="text-center">Clientes</h2>
                     <br>
                     <form action="Controlador?menu=Cliente" method="POST">
                         <div class="form-group">
@@ -59,8 +59,8 @@
                             <td class="table-primary text-center">NIT</td>
                             <td class="table-primary text-center">NOMBRES</td>
                             <td class="table-primary text-center">APELLIDOS</td>
-                            <td class="table-primary text-center">DIRECCION</td>
-                            <td class="table-primary text-center">TELEFONO</td>
+                            <td class="table-primary text-center">DIRECCIÓN</td>
+                            <td class="table-primary text-center">TELÉFONO</td>
                             <td class="table-primary text-center">EMAIL</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>
