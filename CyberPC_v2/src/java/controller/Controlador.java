@@ -26,6 +26,8 @@ public class Controlador extends HttpServlet {
     EmpleadoDAO empDAO = new EmpleadoDAO();
     Factura fac = new Factura();
     FacturaDAO facDAO = new FacturaDAO();
+    Producto producto = new Producto();
+    ProductoDAO productoDAO = new ProductoDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -110,6 +112,35 @@ public class Controlador extends HttpServlet {
             }
 
             request.getRequestDispatcher("Factura.jsp").forward(request, response);
+        }else if(menu.equals("Producto")){
+            
+                switch(accion){
+                case "Listar" :
+                    List listaProductos = productoDAO.listar();
+                    request.setAttribute("productos", listaProductos);
+                    
+                break;
+                case "Agregar":
+                   String nombre = request.getParameter("txtNombreProducto");
+                   String stock = request.getParameter("txtStock");
+                   String precio = request.getParameter("txtPrecio");
+                   String codigoTipoProducto = request.getParameter("txtTipoProducto");
+                   String codigoMarca = request.getParameter("txtMarca");
+                   producto.setNombreProducto(nombre);
+                   producto.setStock(Integer.parseInt(stock));
+                   producto.setPrecioUnitario(Double.parseDouble(precio));
+                   producto.setCodigoTipoProducto(Integer.parseInt(codigoTipoProducto));
+                   producto.setCodigoMarca(Integer.parseInt(codigoMarca));
+                   productoDAO.Agregar(producto);
+                   request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                  
+                break;
+                
+                
+                }
+             
+            request.getRequestDispatcher("Producto.jsp").forward(request, response);
+            
         }
 
     }

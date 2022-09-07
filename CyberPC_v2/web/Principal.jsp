@@ -44,7 +44,7 @@
                         
                         <li class="nav-item">
 
-                            <a class="nav-link bi bi-handbag-fill" href="" target="myFrame"> Producto</a>
+                            <a class="nav-link bi bi-handbag-fill" href="Controlador?menu=Producto&accion=Listar" target="myFrame"> Producto</a>
 
                         </li>
                         
