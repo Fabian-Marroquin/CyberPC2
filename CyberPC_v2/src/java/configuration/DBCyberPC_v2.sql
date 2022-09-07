@@ -24,7 +24,7 @@ CREATE TABLE Empleado(
 
 CREATE TABLE TipoProducto(
 	codigoTipoProducto int not null auto_increment,
-		descripcionTipoProsucto varchar(200) not null,
+		descripcionTipoProducto varchar(200) not null,
 	primary key PK_codigoTipoProducto(codigoTipoProducto)
 );
 
@@ -52,9 +52,13 @@ CREATE TABLE Factura(
 		fechaFactura date not null,
 			NIT int not null,
 				DPIEmpleado bigint not null,
+					codigoTipoPago int not null,
+						codigoSucursal int not null,
 	primary key PK_codigoFactura(codigoFactura),
 	constraint FK_Factura_Cliente foreign key (NIT) references Cliente(NIT),
-    constraint FK_Factura_Empleado foreign key (DPIEmpleado) references Empleado(DPIEmpleado)    
+    constraint FK_Factura_Empleado foreign key (DPIEmpleado) references Empleado(DPIEmpleado),
+    constraint FK_Factura_TipoPago foreign key (codigoTipoPago) references TipoPago(codigoTipoPago),
+    constraint FK_Factura_Sucursal foreign key (codigoSucursal) references Sucursal(codigoSucursal)
 );
 
 CREATE TABLE Producto(
@@ -78,3 +82,17 @@ CREATE TABLE DetalleFactura(
 	constraint FK_DetalleFactura_Factura foreign key (codigoFactura) references Factura (codigoFactura),
 	constraint FK_DetalleFactura_Producto foreign key (codigoProducto) references Producto (codigoProducto) 
 );
+
+insert into Cliente (nombresCliente, apellidosCliente, direccionCliente, telefonoCliente, emailCliente) values ('Pedrito','Weapons','Zona kina','1234567890','pedrito@gmail.com');
+insert into Empleado(DPIEmpleado, nombresEmpleado, telefonoEmpleado, emailEmpleado, contrasenaLogin) values ('1234556','Marvin Daniel','123456789','md@gmail.com','123');
+insert into TipoProducto(descripcionTipoProducto) values ('Esta en perfecto estado');
+insert into Marca(descripcionMarca) values ('Dell');
+insert into TipoPago(descripcionTipoPago) values ('Paypal');
+insert into Sucursal(nombreSucursal, direccionSucursal) values ('CyberPc Peri','Zona 7');
+insert into Factura(fechaFactura, NIT, DPIEmpleado,codigoTipoPago,codigoSucursal) values ('2022-9-6',1,1234556,1,1);
+insert into Producto(nombreProducto, stock, precioUnitario, codigoTipoProducto, codigoMarca) values ('Monitor',10,1000.25,1,1);
+insert into DetalleFactura(cantidad, codigoFactura, codigoProducto) values (15,1,1);
+
+
+
+
