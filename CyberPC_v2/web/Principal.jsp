@@ -68,7 +68,7 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-credit-card-2-back-fill" href="" target="myFrame"> Tipo Pago</a>
+                            <a class="nav-link bi bi-credit-card-2-back-fill" href="Controlador?menu=TipoPago&accion=Listar" target="myFrame"> Tipo Pago</a>
                             
                         </li>
                         

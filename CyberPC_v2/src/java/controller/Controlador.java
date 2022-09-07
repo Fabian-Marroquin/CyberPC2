@@ -32,6 +32,8 @@ public class Controlador extends HttpServlet {
     ClienteDAO clienteDAO = new ClienteDAO();
     TipoProducto tipoproducto = new TipoProducto();
     TipoProductoDAO tipoproductoDAO = new TipoProductoDAO();
+    TipoPago tipPago = new TipoPago();
+    TipoPagoDAO tipPagoDAO = new TipoPagoDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -188,6 +190,24 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("TipoProducto.jsp").forward(request, response);
+        }else if (menu.equals("TipoPago")){
+            switch(accion){
+                
+                case "Listar":
+                    
+                    List listaTipoPago = tipPagoDAO.listar();
+                    request.setAttribute("tipos", listaTipoPago);
+                    break;
+                case "Agregar":
+                    
+                    String tiposPago = request.getParameter("txtTipoPago");
+                    
+                    tipPago.setDescripcionTipoPago(tiposPago);
+                    tipPagoDAO.agregar(tipPago);
+                    request.getRequestDispatcher("Controlador?menu=TipoPago&accion=Listar").forward(request, response);
+                    break;  
+            }
+            request.getRequestDispatcher("TipoPago.jsp").forward(request, response);
         }
 
     }
