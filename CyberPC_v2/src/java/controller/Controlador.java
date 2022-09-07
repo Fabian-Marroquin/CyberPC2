@@ -42,6 +42,9 @@ public class Controlador extends HttpServlet {
     
     DetalleFactura dFac = new DetalleFactura();
     DetalleFacturaDAO dFacDAO = new DetalleFacturaDAO();
+    
+    Sucursal suc = new Sucursal();
+    SucursalDAO sucDAO = new SucursalDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -232,6 +235,23 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("DetalleFactura.jsp").forward(request, response);
+        }else if(menu.equals("Sucursal")){
+            switch(accion){
+                case "Listar":
+                    List listaSucursal = sucDAO.Listar();
+                    request.setAttribute("Sucursales", listaSucursal);
+                    break;
+                    
+                case "Agregar":
+                    String nombreSucursal = request.getParameter("txtNombreSucursal");
+                    String direccionSucursal = request.getParameter("txtDireccionSucursal");
+                    suc.setNombreSucursal(nombreSucursal);
+                    suc.setDireccionSucursal(direccionSucursal);
+                    sucDAO.Agregar(suc);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+            }
+            request.getRequestDispatcher("Sucursal.jsp").forward(request, response);
         }
 
     }

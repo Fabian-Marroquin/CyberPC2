@@ -62,7 +62,7 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-tags-fill" href="" target="myFrame"> Sucursal</a>
+                            <a class="nav-link bi bi-tags-fill" href="Controlador?menu=Sucursal&accion=Listar" target="myFrame"> Sucursal</a>
                             
                         </li>
                         
