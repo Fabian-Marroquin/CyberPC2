@@ -62,7 +62,7 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link " href="" target="myFrame"> Sucursal</a>
+                            <a class="nav-link bi bi-tags-fill" href="" target="myFrame"> Sucursal</a>
                             
                         </li>
                         
@@ -80,7 +80,7 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-file-text-fill" href="" target="myFrame"> Detalle Factura</a>
+                            <a class="nav-link bi bi-file-text-fill" href="Controlador?menu=DetalleFactura&accion=Listar" target="myFrame"> Detalle Factura</a>
                             
                         </li>
                         
