@@ -34,6 +34,8 @@ public class Controlador extends HttpServlet {
     TipoProductoDAO tipoproductoDAO = new TipoProductoDAO();
     TipoPago tipPago = new TipoPago();
     TipoPagoDAO tipPagoDAO = new TipoPagoDAO();
+    DetalleFactura dFac = new DetalleFactura();
+    DetalleFacturaDAO dFacDAO = new DetalleFacturaDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -208,6 +210,24 @@ public class Controlador extends HttpServlet {
                     break;  
             }
             request.getRequestDispatcher("TipoPago.jsp").forward(request, response);
+        }else if(menu.equals("DetalleFactura")){
+            switch(accion){
+                case "Listar":
+                    List listaDeFactura = dFacDAO.Listar();
+                    request.setAttribute("detallesfac", listaDeFactura);
+                    break;
+                case "Agregar":
+                    int cantidad = Integer.parseInt(request.getParameter("txtCantidad"));
+                    int codigoFactura = Integer.parseInt(request.getParameter("txtCodigoFactura"));
+                    int codigoProducto = Integer.parseInt(request.getParameter("txtCodigoProducto"));
+                    dFac.setCantidad(cantidad);
+                    dFac.setCodigoFactura(codigoFactura);
+                    dFac.setCodigoProducto(codigoProducto);
+                    dFacDAO.Agregar(dFac);
+                    request.getRequestDispatcher("Controlador?menu=DetalleFactura&accion=Listar").forward(request, response);
+                    break;
+            }
+            request.getRequestDispatcher("DetalleFactura.jsp").forward(request, response);
         }
 
     }
