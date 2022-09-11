@@ -8,19 +8,15 @@ public class Factura {
     private Date fechaFactura;
     private int NIT;
     private int DPIEmpleado;
-    private int codigoTipoPago;
-    private int codigoSucursal;
 
     public Factura() {
     }
 
-    public Factura(int codigoFactura, Date fechaFactura, int NIT, int DPIEmpleado, int codigoTipoPago, int codigoSucursal) {
+    public Factura(int codigoFactura, Date fechaFactura, int NIT, int DPIEmpleado) {
         this.codigoFactura = codigoFactura;
         this.fechaFactura = fechaFactura;
         this.NIT = NIT;
         this.DPIEmpleado = DPIEmpleado;
-        this.codigoTipoPago = codigoTipoPago;
-        this.codigoSucursal = codigoSucursal;
     }
 
     public int getCodigoFactura() {
@@ -54,22 +50,5 @@ public class Factura {
     public void setDPIEmpleado(int DPIEmpleado) {
         this.DPIEmpleado = DPIEmpleado;
     }
-
-    public int getCodigoTipoPago() {
-        return codigoTipoPago;
-    }
-
-    public void setCodigoTipoPago(int codigoTipoPago) {
-        this.codigoTipoPago = codigoTipoPago;
-    }
-
-    public int getCodigoSucursal() {
-        return codigoSucursal;
-    }
-
-    public void setCodigoSucursal(int codigoSucursal) {
-        this.codigoSucursal = codigoSucursal;
-    }
-    
     
 }

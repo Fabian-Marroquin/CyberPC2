@@ -10,17 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modelo.Empleado;
-import modeloDAO.EmpleadoDAO;
 
 /**
  *
  * @author MAMG.JR
  */
 public class Validar extends HttpServlet {
-
-    Empleado emp = new Empleado();
-    EmpleadoDAO empDAO = new EmpleadoDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,7 +34,7 @@ public class Validar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Validar</title>");
+            out.println("<title>Servlet Validar</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Validar at " + request.getContextPath() + "</h1>");
@@ -74,42 +69,16 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String accion = request.getParameter("accion");
-
-        if (accion.equalsIgnoreCase("Ingresar")) {
-
-            String user = request.getParameter("txtUsuario");       //EMAIL
-            String pass = request.getParameter("txtContrasena");    //CONTRASEÑA
-
-            emp = empDAO.validar(user, pass);
-
-            if (emp.getEmailEmpleado() != null) {
-
-                request.setAttribute("empleado", emp);
-                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
-
-            } else {
-
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-
-            }
-
-        } else {
-
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-
-        }
-
+        processRequest(request, response);
     }
 
-/**
- * Returns a short description of the servlet.
- *
- * @return a String containing servlet description
- */
-@Override
-        public String getServletInfo() {
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
