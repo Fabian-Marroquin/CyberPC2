@@ -64,4 +64,59 @@ public class ClienteDAO {
         return resp;
     }
     
+    //METODO BUSCAR POR NIT
+    public Cliente listarNIT(int NIT) {
+        Cliente cl = new Cliente();
+        String sql = "Select * from cliente where NIT =" + NIT;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                cl.setNIT(1);
+                cl.setNombresCliente(rs.getString(2));
+                cl.setApellidosCliente(rs.getString(3));
+                cl.setDireccionCliente(rs.getString(4));
+                cl.setTelefonoCliente(rs.getString(5));
+                cl.setEmailCliente(rs.getString(6));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cl;
+    }
+
+    //METODO PARA EDITAR
+    public int actualizar(Cliente cl) {
+        String sql = "Update cliente set nombresCliente = ?, apellidosCliente = ?, direccionCliente = ?, telefonoCliente = ?, emailCliente = ? where NIT = ?";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, cl.getNombresCliente());
+            ps.setString(2, cl.getApellidosCliente());
+            ps.setString(3, cl.getDireccionCliente());
+            ps.setString(4, cl.getTelefonoCliente());
+            ps.setString(5, cl.getEmailCliente());
+            ps.setInt(6, cl.getNIT());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resp;
+    }
+
+    //METODO PARA ELIMINAR
+    public void eliminar(int NIT) {
+        String sql = "delete from cliente where NIT = " + NIT;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
 }

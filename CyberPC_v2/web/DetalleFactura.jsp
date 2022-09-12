@@ -24,17 +24,24 @@
                     <form action="Controlador?menu=DetalleFactura" method="POST">
                         <div class="form-group">
                             <label>Cantidad</label>
-                            <input type="text" name="txtCantidad" class="form-control">
+                            <input type="text" value="${Dfac.getCantidad()}" name="txtCantidad" class="form-control">
                         </div>
 
                         <div class="form-group">
                             <label>Código Factura:</label>
-                            <input type="text" name="txtCodigoFactura" class="form-control">
+                            <input type="text" value="${Dfac.getCodigoFactura()}" name="txtCodigoFactura" class="form-control">
+                            <button class="bi  btn btn-info" style="margin:5px 0px 0px 0px;" type="submit" name="accion" value="Verificacion"> Buscar Factura</button>
+                            <label style="text-align:center;margin:0px 0px 0px 5px"><p style="color:${color1};margin:5px 0px 5px 0px">ㅤ${mesajeFactura}</p></label>
                         </div>
 
                         <div class="form-group">
                             <label>Código Producto:</label>
-                            <input type="text" name="txtCodigoProducto" class="form-control">
+                            <input type="text" value="${Dfac.getCodigoProducto()}" name="txtCodigoProducto" class="form-control">
+                            <button class="bi  btn btn-info" style="margin:5px 0px 0px 0px;" type="submit" name="accion" value="Verificacion"> Buscar Producto</button>
+                            <label style="text-align:center;margin:0px 0px 0px 5px"><p style="color:${color};margin:5px 0px 5px 0px">ㅤ${mensajeProducto}</p></label>
+                            <p>Stock: ${pro.getStock()}</p>
+                            <p>Nombre del Producto: ${pro.getNombreProducto()}</p>
+                            <p>Precio Unitario: Q${pro.getPrecioUnitario()}</p>
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
@@ -49,6 +56,7 @@
                         <tr>
                             <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">CANTIDAD</td>
+                            <td class="table-primary text-center">SUB-TOTAL</td>
                             <td class="table-primary text-center">CÓDIGO FACTURA</td>
                             <td class="table-primary text-center">CÓDIGO PRODUCTO</td>
                             <td class="table-primary text-center">ACCIONES</td>
@@ -59,17 +67,24 @@
                         <tr>
                             <td class="text-center table-light">${detalleFactura.getCodigoDetalleFactura()}</td>
                             <td class="text-center table-light">${detalleFactura.getCantidad()}</td>
+                            <td class="text-center table-light">${detalleFactura.getSubtotal()}</td>
                             <td class="text-center table-light">${detalleFactura.getCodigoFactura()}</td>
                             <td class="text-center table-light">${detalleFactura.getCodigoProducto()}</td>
 
                             <td class="text-center table-light">
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=DetalleFactura&accion=Editar&codigoDFactura=${detalleFactura.getCodigoDetalleFactura()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=DetalleFactura&accion=Eliminar&codigoDFactura=${detalleFactura.getCodigoDetalleFactura()}"> Eliminar</a>
                             </td>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
+                <form action="FacturaPDF" target="_black">
+                    <p>Total de la Factura: Q. ${total}</p>
+                    <input type="text" value="${fac.getCodigoFactura()}" name="codigoFac" style="color:white;border: none; background: transparent; width: 2px;height: 2px">
+                    <button class="bi  btn btn-info" style="margin:5px 0px 0px 10px;" type="submit"> Imprimir</button>
+                </form>
+                
             </div>
         </div>
 

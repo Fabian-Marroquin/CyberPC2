@@ -31,50 +31,59 @@
                     <h2 class="text-center">Empleados</h2>
                     <br>
                     
-                    <form action="Controlador?menu=Empleado" method="POST">
+                    <form action="Controlador?menu=Empleado" method="POST" enctype="multipart/form-data">
                         
                         <div class="form-group">
                             
                             <label>DPI:</label>
-                            <input type="text" name="txtDPIEmpleado" value="${empleado.getDPIEmpleado()}" class="form-control">
+                            <input type="text" value="${empleado.getDPIEmpleado()}" name="txtDPIEmpleado" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Nombre:</label>
-                            <input type="text" name="txtNombresEmpleado" value="${empleado.getNombresEmpleado()}" class="form-control">
+                            <input type="text" value="${empleado.getNombresEmpleado()}" name="txtNombresEmpleado" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Teléfono:</label>
-                            <input type="text" name="txtTelefonoEmpleado" value="${empleado.getTelefonoEmpleado()}" class="form-control">
+                            <input type="text" value="${empleado.getTelefonoEmpleado()}" name="txtTelefonoEmpleado" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Email</label>
-                            <input type="text" name="txtEmailEmpleado" value="${empleado.getEmailEmpleado()}" class="form-control">
+                            <input type="text" value="${empleado.getEmailEmpleado()}" name="txtEmailEmpleado" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Contraseña</label>
-                            <input type="password" name="txtContrasenaLogin" value="${empleado.getContrasenaEmpleado()}" class="form-control">
+                            <input type="password" value="${empleado.getContrasenaEmpleado()}" name="txtContrasenaLogin" class="form-control">
                             
                         </div>
                         
+                        <div class="form-group">
+
+                            <label>Foto Perfil</label>
+                            <input type="file" value="${empleado.getFotoPerfil()}" name="fileFotoPerfil">
+
+                        </div>
+                        
+                        <!--    
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
-                        
-                        <!--
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                         -->
+                        
+                        
+                        <input type="submit" formaction="Controlador?menu=Empleado&accion=Agregar" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" formaction="Controlador?menu=Empleado&accion=Actualizar" name="accion" value="Actualizar" class="btn btn-success">
+                        
                     </form>
                     
                 </div>
@@ -95,6 +104,7 @@
                             <td class="table-primary text-center">NOMBRES</td>
                             <td class="table-primary text-center">TELÉFONO</td>
                             <td class="table-primary text-center">EMAIL</td>
+                            <td class="table-primary text-center">FOTO</td>
                             <td class="table-primary text-center">ACCIONES</td>
                             
                         </tr>
@@ -111,6 +121,7 @@
                             <td class="text-center table-light">${empleado.getNombresEmpleado()}</td>
                             <td class="text-center table-light">${empleado.getTelefonoEmpleado()}</td>
                             <td class="text-center table-light">${empleado.getEmailEmpleado()}</td>
+                            <td class="text-center table-light"><img src="${empleado.getFotoPerfil()}" width="60" height="60" style="border-radius: 50%" ></td>
                             
                             <td class="text-center table-light">
                                 

@@ -4,15 +4,17 @@ package modelo;
 public class DetalleFactura {
     private int codigoDetalleFactura;
     private int cantidad;
+    private double subtotal;
     private int codigoFactura;
     private int codigoProducto;
 
     public DetalleFactura() {
     }
 
-    public DetalleFactura(int codigoDetalleFactura, int cantidad, int codigoFactura, int codigoProducto) {
+    public DetalleFactura(int codigoDetalleFactura, int cantidad, double subtotal, int codigoFactura, int codigoProducto) {
         this.codigoDetalleFactura = codigoDetalleFactura;
         this.cantidad = cantidad;
+        this.subtotal = subtotal;
         this.codigoFactura = codigoFactura;
         this.codigoProducto = codigoProducto;
     }
@@ -31,6 +33,14 @@ public class DetalleFactura {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(double subtotal) {
+        this.subtotal = subtotal;
     }
 
     public int getCodigoFactura() {
