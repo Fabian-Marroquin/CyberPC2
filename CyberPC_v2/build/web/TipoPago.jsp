@@ -33,7 +33,7 @@
                         
                         <div class="form-group">
                             <label>Tipo de Pago:</label>
-                            <input type="next" name="txtTipoPago" class="form-control">
+                            <input type="next" value="${tiposPago.getDescripcionTipoPago()}" name="txtTipoPago" class="form-control">
                         </div>
                         
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
@@ -74,8 +74,8 @@
 
                             <td class="text-center table-light">
                                 
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=TipoPago&accion=Editar&codigoTipoPago=${tiposPago.getCodigoTipoPago()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=TipoPago&accion=Eliminar&codigoTipoPago=${tiposPago.getCodigoTipoPago()}"> Eliminar</a>
                                 
                             </td>
                             
