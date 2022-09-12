@@ -66,5 +66,58 @@ public class ProductoDAO {
                 
                 return resp;
     }
+    
+    
+    public Producto listarCodigoProducto(int id){
+        Producto pro = new Producto();
+        String sql = "Select * from Producto where codigoProducto ="+id;
+        try{
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                pro.setNombreProducto(rs.getString(2));
+                pro.setStock(rs.getInt(3));
+                pro.setPrecioUnitario(rs.getInt(4));
+                pro.setCodigoTipoProducto(rs.getInt(5));
+                pro.setCodigoMarca(rs.getInt(6));
+            }
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+         
+        return pro;
+    }
+    
+    //metodo para editar
+    public int actualizar(Producto prd){
+        String sql = "Update Producto set nombreProducto = ?, stock = ?, precioUnitario = ? where codigoProducto = ?";
+        try{
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, prd.getNombreProducto());
+            ps.setInt(2, prd.getStock());
+            ps.setDouble(3, prd.getPrecioUnitario());
+            ps.setInt(4, prd.getCodigoProducto());
+            ps.executeUpdate();
+            
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
+        return resp;
+    }
+    
+    // metodo para eliminar
+    public void eliminar(int id){
+        String sql = "delete from Producto where codigoProducto = "+id;
+        try{
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }

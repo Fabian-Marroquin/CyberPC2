@@ -4,7 +4,7 @@ CREATE DATABASE DBCyberPC_v2;
 USE DBCyberPC_v2;
 
 CREATE TABLE Cliente(
-	NIT bigint not null,
+	NIT int not null auto_increment,
 		nombresCliente varchar(150) not null,
 			apellidosCliente varchar(150) not null,
 				direccionCliente varchar(200) not null,
@@ -50,7 +50,7 @@ CREATE TABLE Sucursal(
 CREATE TABLE Factura(
 	codigoFactura int not null auto_increment,
 		fechaFactura date not null,
-			NIT bigint not null,
+			NIT int not null,
 				DPIEmpleado bigint not null,
 					codigoTipoPago int not null,
 						codigoSucursal int not null,
@@ -83,13 +83,13 @@ CREATE TABLE DetalleFactura(
 	constraint FK_DetalleFactura_Producto foreign key (codigoProducto) references Producto (codigoProducto) 
 );
 
-insert into Cliente (NIT,nombresCliente, apellidosCliente, direccionCliente, telefonoCliente, emailCliente) values (12489050,'Pedrito','Weapons','Zona kina','1234567890','pedrito@gmail.com');
+insert into Cliente (nombresCliente, apellidosCliente, direccionCliente, telefonoCliente, emailCliente) values ('Pedrito','Weapons','Zona kina','1234567890','pedrito@gmail.com');
 insert into Empleado(DPIEmpleado, nombresEmpleado, telefonoEmpleado, emailEmpleado, contrasenaLogin) values ('1234556','Marvin Daniel','123456789','md@gmail.com','123');
 insert into TipoProducto(descripcionTipoProducto) values ('Esta en perfecto estado');
 insert into Marca(descripcionMarca) values ('Dell');
 insert into TipoPago(descripcionTipoPago) values ('Paypal');
 insert into Sucursal(nombreSucursal, direccionSucursal) values ('CyberPc Peri','Zona 7');
-insert into Factura(fechaFactura, NIT, DPIEmpleado,codigoTipoPago,codigoSucursal) values ('2022-9-6',12489050,1234556,1,1);
+insert into Factura(fechaFactura, NIT, DPIEmpleado,codigoTipoPago,codigoSucursal) values ('2022-9-6',1,1234556,1,1);
 insert into Producto(nombreProducto, stock, precioUnitario, codigoTipoProducto, codigoMarca) values ('Monitor',10,1000.25,1,1);
 insert into DetalleFactura(cantidad, codigoFactura, codigoProducto) values (15,1,1);
 

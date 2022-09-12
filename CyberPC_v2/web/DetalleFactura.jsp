@@ -28,12 +28,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Codigo Factura:</label>
+                            <label>Código Factura:</label>
                             <input type="text" name="txtCodigoFactura" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label>Codigo Producto:</label>
+                            <label>Código Producto:</label>
                             <input type="text" name="txtCodigoProducto" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
@@ -44,29 +44,30 @@
 
             <div class="col-sm-8">
                 <table class="table table-hover">
+                    <br>
                     <thead>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">CANTIDAD</td>
-                            <td class="table-primary text-center">CODIGO FACTURA</td>
-                            <td class="table-primary text-center">CODIGO PRODUCTO</td>
+                            <td class="table-primary text-center">CÓDIGO FACTURA</td>
+                            <td class="table-primary text-center">CÓDIGO PRODUCTO</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="detalleFactura" items="${detallesfac}">
-                            <tr>
-                                <td class="text-center table-light">${detalleFactura.getCodigoDetalleFactura()}</td>
-                                <td class="text-center table-light">${detalleFactura.getCantidad()}</td>
-                                <td class="text-center table-light">${detalleFactura.getCodigoFactura()}</td>
-                                <td class="text-center table-light">${detalleFactura.getCodigoProducto()}</td>
-                               
-                                <td class="text-center table-light">
-                                    <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
+                    <c:forEach var="detalleFactura" items="${detallesfac}">
+                        <tr>
+                            <td class="text-center table-light">${detalleFactura.getCodigoDetalleFactura()}</td>
+                            <td class="text-center table-light">${detalleFactura.getCantidad()}</td>
+                            <td class="text-center table-light">${detalleFactura.getCodigoFactura()}</td>
+                            <td class="text-center table-light">${detalleFactura.getCodigoProducto()}</td>
+
+                            <td class="text-center table-light">
+                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
                                 <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

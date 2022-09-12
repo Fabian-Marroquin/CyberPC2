@@ -32,7 +32,7 @@
                             <input type="text" name="txtNIT" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>DPIEmpleado:</label>
+                            <label>DPI Empleado:</label>
                             <input type="text" name="txtDPIEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
