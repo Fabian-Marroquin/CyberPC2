@@ -37,11 +37,11 @@
                             </div>
                             <div class="form-group">
                                 <label> Tipo de producto:</label>
-                                <input type = "text" name = "txtTipoProducto" class="form-control">
+                                <input type = "text" value="${producto.getCodigoTipoProducto()}" name = "txtTipoProducto" class="form-control">
                             </div>
                              <div class="form-group">
                                 <label> Marca:</label>
-                                <input type = "text" name = "txtMarca" class="form-control">
+                                <input type = "text" value="${producto.getCodigoMarca()}" name = "txtMarca" class="form-control">
                             </div>
                             <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
