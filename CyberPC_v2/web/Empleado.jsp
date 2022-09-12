@@ -36,35 +36,35 @@
                         <div class="form-group">
                             
                             <label>DPI:</label>
-                            <input type="text" name="txtDPIEmpleado" class="form-control">
+                            <input type="text" name="txtDPIEmpleado" value="${empleado.getDPIEmpleado()}" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Nombre:</label>
-                            <input type="text" name="txtNombresEmpleado" class="form-control">
+                            <input type="text" name="txtNombresEmpleado" value="${empleado.getNombresEmpleado()}" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Teléfono:</label>
-                            <input type="text" name="txtTelefonoEmpleado" class="form-control">
+                            <input type="text" name="txtTelefonoEmpleado" value="${empleado.getTelefonoEmpleado()}" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Email</label>
-                            <input type="text" name="txtEmailEmpleado" class="form-control">
+                            <input type="text" name="txtEmailEmpleado" value="${empleado.getEmailEmpleado()}" class="form-control">
                             
                         </div>
                         
                         <div class="form-group">
                             
                             <label>Contraseña</label>
-                            <input type="password" name="txtContrasenaLogin" class="form-control">
+                            <input type="password" name="txtContrasenaLogin" value="${empleado.getContrasenaEmpleado()}" class="form-control">
                             
                         </div>
                         
@@ -114,8 +114,8 @@
                             
                             <td class="text-center table-light">
                                 
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Empleado&accion=Editar&DPIEmpleado=${empleado.getDPIEmpleado()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Empleado&accion=Eliminar&DPIEmpleado=${empleado.getDPIEmpleado()}"> Eliminar</a>
                                 
                             </td>
                             

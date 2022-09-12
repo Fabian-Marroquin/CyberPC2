@@ -24,27 +24,27 @@
                     <form action="Controlador?menu=Cliente" method="POST">
                         <div class="form-group">
                             <label>NIT:</label>
-                            <input type="text" name="txtNIT" class="form-control">
+                            <input type="text" value="${cliente.getNIT()}" name="txtNIT" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Nombres:</label>
-                            <input type="text" name="txtNombresCliente" class="form-control">
+                            <input type="text" value="${cliente.getNombresCliente()}" name="txtNombresCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Apellidos:</label>
-                            <input type="text" name="txtApellidosCliente" class="form-control">
+                            <input type="text" value="${cliente.getApellidosCliente()}" name="txtApellidosCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Dirección:</label>
-                            <input typo="text" name="txtDireccionCliente" class="form-control">
+                            <input typo="text" value="${cliente.getDireccionCliente()}" name="txtDireccionCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Teléfono:</label>
-                            <input type="text" name="txtTelefonoCliente" class="form-control">
+                            <input type="text" value="${cliente.getTelefonoCliente()}" name="txtTelefonoCliente" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Email:</label>
-                            <input type="text" name="txtEmailCliente" class="form-control">
+                            <input type="text" value="${cliente.getEmailCliente()}" name="txtEmailCliente" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
@@ -75,8 +75,8 @@
                                 <td class="text-center table-light">${cliente.getTelefonoCliente()}</td>
                                 <td class="text-center table-light">${cliente.getEmailCliente()}</td>
                                 <td>
-                                    <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                    <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
+                                    <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Cliente&accion=Editar&NIT=${cliente.getNIT()}"> Editar</a>
+                                    <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Cliente&accion=Eliminar&NIT=${cliente.getNIT()}"> Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -89,3 +89,4 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </html>
+

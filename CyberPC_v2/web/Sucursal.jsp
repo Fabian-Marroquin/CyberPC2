@@ -25,11 +25,11 @@
                     <form action="Controlador?menu=Sucursal" method="POST">
                         <div class="form-group">
                             <label>Nombre:</label>
-                            <input type="text" name="txtNombreSucursal" class="form-control">
+                            <input type="text" value="${sucursal.getNombreSucursal()}" name="txtNombreSucursal" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Dirección:</label>
-                            <input type="text" name="txtDireccionSucursal" class="form-control">
+                            <input type="text" value="${sucursal.getDireccionSucursal()}" name="txtDireccionSucursal" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
@@ -41,9 +41,9 @@
                     <thead>
                         <br>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">NOMBRE</td>
-                            <td class="table-primary text-center">DIRECCION</td>
+                            <td class="table-primary text-center">DIRECCIÓN</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>
                     </thead>
@@ -54,8 +54,8 @@
                             <td class="text-center table-light">${sucursal.getNombreSucursal()}</td>
                             <td class="text-center table-light">${sucursal.getDireccionSucursal()}</td>
                             <td class="text-center table-light">
-                                <a class="btn btn-warning bi bi-pencil-fill" href="">Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href="">Eliminar</a>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Sucursal&accion=Editar&codigoSucursal=${sucursal.getCodigoSucursal()}">Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Sucursal&accion=Eliminar&codigoSucursal=${sucursal.getCodigoSucursal()}">Eliminar</a>
                             </td>
                         </tr>
                         </c:forEach>
