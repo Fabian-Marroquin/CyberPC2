@@ -54,20 +54,47 @@ public class TipoProductoDAO {
         return resp;
     }
         
-        public TipoProducto listarCodigoTipoProducto (int id){
-            TipoProducto tps = new TipoProducto();
-            String sql = "Select * from tipoproducto where codigoTipoProducto ="+id;     
-        try{
+    public TipoProducto listarCodigoTipoProducto(int id) {
+        TipoProducto tps = new TipoProducto();
+        String sql = "Select * from tipoproducto where codigoTipoProducto =" + id;
+        try {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 tps.setDescripcionTipoProducto(rs.getString(2));
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return tps;
+    }
+
+    // metodo para editar
+    public int actualizar(TipoProducto tp) {
+        String sql = "Update tipoproducto set descripcionTipoProducto = ? where codigoTipoProducto = ?";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, tp.getDescripcionTipoProducto());
+            ps.setInt(2, tp.getCodigoTipoProducto());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resp;
+    }
+
+    //metodo para eliminar 
+    public void eliminar(int id) {
+        String sql = "delete from tipoproducto where codigoTipoProducto = " + id;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

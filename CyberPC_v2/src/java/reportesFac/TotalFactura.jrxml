@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TotalFactura" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="53b94be6-cbec-4ef9-a2cd-3a4193f6caff">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codFac" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT sum(D.subtotal) FROM DetalleFactura D WHERE D.codigoFactura = $P{codFac};]]>
+	</queryString>
+	<field name="sum(D.subtotal)" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="Q #,##0.00">
+				<reportElement x="453" y="0" width="119" height="20" uuid="563ea10a-7a60-442d-a596-e0a2d979dd5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{sum(D.subtotal)}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="406" y="0" width="47" height="20" uuid="2f73af7f-47aa-472d-aefa-c3cddb317950"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
