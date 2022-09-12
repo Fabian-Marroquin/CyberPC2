@@ -28,8 +28,6 @@ public class Controlador extends HttpServlet {
     FacturaDAO facDAO = new FacturaDAO();
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
-    Cliente cliente = new Cliente();
-    ClienteDAO clienteDAO = new ClienteDAO();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -143,32 +141,6 @@ public class Controlador extends HttpServlet {
              
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
             
-        
-        }else if (menu.equals("Cliente")){
-            switch(accion){
-                case "Listar":
-                List listaCliente = clienteDAO.listar();
-                request.setAttribute("clientes", listaCliente);
-                break;
-                case "Agregar":
-                    String nit = request.getParameter("txtNIT");
-                    String nombres = request.getParameter("txtNombresCliente");
-                    String apellidos = request.getParameter("txtApellidosCliente");
-                    String direccion = request.getParameter("txtDireccionCliente");
-                    String telefono = request.getParameter("txtTelefonoCliente");
-                    String email = request.getParameter("txtEmailCliente");
-                    cliente.setNIT(Integer.parseInt(nit));
-                    cliente.setNombresCliente(nombres);
-                    cliente.setApellidosCliente(apellidos);
-                    cliente.setDireccionCliente(direccion);
-                    cliente.setTelefonoCliente(telefono);
-                    cliente.setEmailCliente(email);
-                    clienteDAO.agregar(cliente);
-                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
-                    break;
-                    
-            }
-            request.getRequestDispatcher("Cliente.jsp").forward(request, response);
         }
 
     }

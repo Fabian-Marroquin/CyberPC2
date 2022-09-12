@@ -86,7 +86,7 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-person-fill" href="Controlador?menu=Cliente&accion=Listar" target="myFrame" > Cliente</a>
+                            <a class="nav-link bi bi-person-fill" href="" target="myFrame" > Cliente</a>
                             
                         </li>
                         
