@@ -11,41 +11,50 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel=stylesheet type="text/css" href="css/styleVistas.css">
+
         <title>Vista Tipo Producto</title>
     </head>
     <body>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
+                    <h2 class="text-center">Tipo Producto</h2>
+                    <br>
                     <form action="Controlador?menu=TipoProducto" method="POST">
-                        <div>
+                        <div class="form-group">
                             <label>DESCRIPCION TIPO PRODUCTO:</label>
-                            <input type="text" name="txttipoProducto" class="form-control">
+                            <input type="text" value="${tipoproducto.getDescripcionTipoProducto()}" name="txttipoProducto" class="form-control">
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
+                        <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info">Agregar</button>
+                        <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success">Actualizar</button>
                     </form>
                 </div>
             </div>
+
             <div class="col-sm-8">
                 <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <td>CODIGO</td>
-                            <td>DESCRIPCION</td>
-                            <td>ACCIONES</td>
-                        </tr>
+                    <br>
+
+                    <tr>
+                        <td class="table-primary text-center">CODIGO</td>
+                        <td class="table-primary text-center">DESCRIPCION</td>
+                        <td class="table-primary text-center">ACCIONES</td>
+                    </tr>
+
                     </thead>
                     <tbody>
                         <c:forEach var="tipoproducto" items="${tipoProductos}">
-                        <tr>
-                            <td>${tipoproducto.getCodigoTipoProducto()}</td>
-                            <td>${tipoproducto.getDescripcionTipoProducto()}</td>
-                            <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>${tipoproducto.getCodigoTipoProducto()}</td>
+                                <td>${tipoproducto.getDescripcionTipoProducto()}</td>
+                                <td>
+                                    <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=TipoProducto&accion=Editar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}"href="Controlador?menu=TipoProducto&accion=Eliminar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}">Editar</a>
+                                    <a class="btn btn-danger bi bi-trash-fill"  href="Controlador?menu=TipoProducto&accion=Eliminar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}">Eliminar</a>
+                                </td>
+                            </tr>
                         </c:forEach>
                     </tbody>
                 </table>
