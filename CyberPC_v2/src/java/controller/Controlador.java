@@ -46,8 +46,6 @@ public class Controlador extends HttpServlet {
     Sucursal suc = new Sucursal();
     SucursalDAO sucDAO = new SucursalDAO();
 
-    Marca marca = new Marca();
-    MarcaDAO marcaDAO = new MarcaDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -254,21 +252,6 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Sucursal.jsp").forward(request, response);
-        }else if(menu.equals("Marca")){
-            switch(accion){
-                case "Listar":
-                        List listaMarca = marcaDAO.Listar();
-                        request.setAttribute("marca", listaMarca);
-                        break;
-                case "Agregar":
-                        String descripcion = request.getParameter("txtDescripcion");
-                        marca.setDescripcionMarca(descripcion);
-                        marcaDAO.Agregar(marca);
-                        request.getRequestDispatcher("Controlador?menu=Marca&accion=Listar").forward(request, response);
-                        break;       
-            }
-            
-            request.getRequestDispatcher("Marca.jsp").forward(request, response);
         }
 
     }
