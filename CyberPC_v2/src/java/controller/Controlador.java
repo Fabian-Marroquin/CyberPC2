@@ -43,6 +43,7 @@ public class Controlador extends HttpServlet {
 
     TipoPago tipPago = new TipoPago();
     TipoPagoDAO tipPagoDAO = new TipoPagoDAO();
+    int codPago;
 
     DetalleFactura dFac = new DetalleFactura();
     DetalleFacturaDAO dFacDAO = new DetalleFacturaDAO();
@@ -334,6 +335,30 @@ public class Controlador extends HttpServlet {
                     tipPagoDAO.agregar(tipPago);
                     request.getRequestDispatcher("Controlador?menu=TipoPago&accion=Listar").forward(request, response);
                     break;
+                case "Editar":
+                    codPago = Integer.parseInt(request.getParameter("codigoTipoPago"));
+                    TipoPago t = tipPagoDAO.listarCodigoPago(codPago);
+                    request.setAttribute("tiposPago", t);
+                    request.getRequestDispatcher("Controlador?menu=TipoPago&accion=Listar").forward(request, response);
+                    break;
+
+                case "Actualizar":
+                    String desPago = request.getParameter("txtTipoPago");
+                    tipPago.setDescripcionTipoPago(desPago);
+                    tipPago.setCodigoTipoPago(codPago);
+                    tipPagoDAO.actualizar(tipPago);
+                    request.getRequestDispatcher("Controlador?menu=TipoPago&accion=Listar").forward(request, response);
+                    break;
+
+
+                case "Eliminar":
+                    codPago = Integer.parseInt(request.getParameter("codigoTipoPago"));
+                    tipPagoDAO.eliminar(codPago);
+                    request.getRequestDispatcher("Controlador?menu=TipoPago&accion=Listar").forward(request, response);
+                    break;    
+                    
+                    
+                    
             }
             request.getRequestDispatcher("TipoPago.jsp").forward(request, response);
         } else if (menu.equals("DetalleFactura")) {
