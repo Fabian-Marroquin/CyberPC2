@@ -8,6 +8,10 @@
         <servlet-name>Validar</servlet-name>
         <servlet-class>controller.Validar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FacturaPDF</servlet-name>
+        <servlet-class>controller.FacturaPDF</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Validar</servlet-name>
         <url-pattern>/Validar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FacturaPDF</servlet-name>
+        <url-pattern>/FacturaPDF</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

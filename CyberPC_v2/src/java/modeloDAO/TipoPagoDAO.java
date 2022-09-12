@@ -54,4 +54,47 @@ public class TipoPagoDAO {
         }
         return resp;
     }
+    
+    public TipoPago listarCodigoPago(int id) {
+        TipoPago ti = new TipoPago();
+        String sql = "Select * from TipoPago where codigoTipoPago = " + id;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                ti.setDescripcionTipoPago(rs.getString(2));
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ti;
+    }
+
+    public int actualizar(TipoPago ti) {
+        String sql = "Update TipoPago set descripcionTipoPago = ? where codigoTipoPago = ?";
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, ti.getDescripcionTipoPago());
+            ps.setInt(2, ti.getCodigoTipoPago());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("No se pudo agregar el registro");
+        }
+        return resp;
+    }
+
+    public void eliminar(int id) {
+        String sql = "delete from TipoPago where codigoTipoPago =" + id;
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -25,26 +25,26 @@
 
                             <div class="form-group">
                             <label> Nombre:</label>
-                                <input type = "text" name = "txtNombreProducto" class="form-control">
+                                <input type = "text" value="${producto.getNombreProducto()}" name = "txtNombreProducto" class="form-control">
                             </div>
                              <div class="form-group">
                                  <label> Stock:</label>
-                                <input type = "text" name = "txtStock" class="form-control">
+                                <input type = "text" value="${producto.getStock()}" name = "txtStock" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label> Precio:</label>
-                                <input type = "text" name = "txtPrecio" class="form-control">
+                                <input type = "text" value="${producto.getPrecioUnitario()}" name = "txtPrecio" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label> Tipo de producto:</label>
-                                <input type = "text" name = "txtTipoProducto" class="form-control">
+                                <input type = "text" value="${producto.getCodigoTipoProducto()}" name = "txtTipoProducto" class="form-control">
                             </div>
                              <div class="form-group">
                                 <label> Marca:</label>
-                                <input type = "text" name = "txtMarca" class="form-control">
+                                <input type = "text" value="${producto.getCodigoMarca()}" name = "txtMarca" class="form-control">
                             </div>
                             <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
-                        <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
+                            <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
                         </form>
                     </div>
                 </div>   
@@ -75,9 +75,8 @@
                             
                             
                             <td class="text-center table-light">
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
-                            </td>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Producto&accion=Eliminar&codigoProducto=${producto.getCodigoProducto()}"> Eliminar</a>
                         </tr>
                         </c:forEach>
                     </tbody>

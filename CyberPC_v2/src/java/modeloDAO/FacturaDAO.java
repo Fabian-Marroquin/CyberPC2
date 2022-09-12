@@ -60,4 +60,57 @@ public class FacturaDAO {
 
         return resp;
     }
+    
+    //Metodo buscar Factura
+    public Factura buscarCodigoFactura(int codigoFactura){
+        Factura fac = new Factura();
+        String sql="SELECT * FROM Factura F WHERE F.codigoFactura ="+codigoFactura;
+        try {
+            con = conSQL.Conexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                
+                fac.setCodigoFactura(rs.getInt(1));
+                fac.setFechaFactura(rs.getDate(2));
+                fac.setNIT(rs.getInt(3));
+                fac.setDPIEmpleado(rs.getInt(4));
+                fac.setCodigoTipoPago(rs.getInt(5));
+                fac.setCodigoSucursal(rs.getInt(6));
+                
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return fac;
+    }
+    
+    //Metodo actualizar Factura
+    public int actualizar(Factura fac){
+        String sql = "UPDATE Factura set fechaFactura = ? WHERE codigoFactura = ?";
+        try {
+            con = conSQL.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.setDate(1, new java.sql.Date(fac.getFechaFactura().getTime()));
+            ps.setInt(2, fac.getCodigoFactura());
+            ps.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return resp;
+    }
+    
+    //Metodo eliminar Factura
+    public void eliminar(int id){
+        String sql = "DELETE FROM Factura WHERE codigoFactura ="+id;
+        try {
+            con = conSQL.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

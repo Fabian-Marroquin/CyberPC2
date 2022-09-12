@@ -25,23 +25,23 @@
                     <form action="Controlador?menu=Factura" method="POST">
                         <div class="form-group">
                             <label>Fecha:</label>
-                            <input type="date" name="dtFechaFactura" class="form-control"> 
+                            <input type="date" value="${factura.getFechaFactura()}" name="dtFechaFactura" class="form-control"> 
                         </div>
                         <div class="form-group">
                             <label>NIT:</label>
-                            <input type="text" name="txtNIT" class="form-control">
+                            <input type="text" value="${factura.getNIT()}" name="txtNIT" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>DPI Empleado:</label>
-                            <input type="text" name="txtDPIEmpleado" class="form-control">
+                            <input type="text" value="${factura.getDPIEmpleado()}" name="txtDPIEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Código Tipo de Pago:</label>
-                            <input type="text" name="txtCodigoTipoPago" class="form-control">
+                            <input type="text" value="${factura.getCodigoTipoPago()}" name="txtCodigoTipoPago" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Código Sucursal:</label>
-                            <input type="text" name="txtCodigoSucursal" class="form-control">
+                            <input type="text" value="${factura.getCodigoSucursal()}" name="txtCodigoSucursal" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
@@ -72,8 +72,8 @@
                             <td class="text-center table-light">${factura.getCodigoTipoPago()}</td>
                             <td class="text-center table-light">${factura.getCodigoSucursal()}</td>
                             <td class="text-center table-light">
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Factura&accion=Editar&codigoFa=${factura.getCodigoFactura()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Factura&accion=Eliminar&codigoFa=${factura.getCodigoFactura()}"> Eliminar</a>
                             </td>
                         </tr>
                         </c:forEach>

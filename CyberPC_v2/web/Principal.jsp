@@ -106,7 +106,8 @@
 
                             <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdown">
 
-                                <li><a class="dropdown-item" href="#"> <img src="img/Logo.png" alt="60" width="60"> </a></li>
+                                <!-- <li><a class="dropdown-item" href="#"> <img src="img/Logo.png" alt="60" width="60"> </a></li> -->
+                                <li><a class="dropdown-item" href="#"> <img src="${empleado.getFotoPerfil()}" width="70" height="70" style="border-radius: 50%"> </a></li>
                                 <li><a class="dropdown-item" href="#"> <a class="dropdown-item" href="#">${empleado.getNombresEmpleado()}</a> </a></li>
                                 <li><a class="dropdown-item" href="#"> <a class="dropdown-item" href="#">${empleado.getEmailEmpleado()}</a> </a></li>
                                 <li>
@@ -132,9 +133,9 @@
 
         </nav>
 
-        <div class="m-4" style="height: 600px">
+        <div class="" style="margin: 0;padding: 0;height: 100vh">
 
-            <iframe src="PrincipalCarousel.jsp" name="myFrame" style="height: 100%; width: 100%;"></iframe>
+            <iframe src="PrincipalCarousel.jsp" name="myFrame" style="margin: 0; height: 100%; width: 100%;"></iframe>
 
         </div>
 

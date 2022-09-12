@@ -7,16 +7,18 @@ public class Empleado {
     private String telefonoEmpleado;
     private String emailEmpleado;
     private String contrasenaEmpleado;
+    private String fotoPerfil;
 
     public Empleado() {
     }
 
-    public Empleado(int DPIEmpleado, String nombresEmpleado, String telefonoEmpleado, String emailEmpleado, String contrasenaEmpleado) {
+    public Empleado(int DPIEmpleado, String nombresEmpleado, String telefonoEmpleado, String emailEmpleado, String contrasenaEmpleado, String fotoPerfil) {
         this.DPIEmpleado = DPIEmpleado;
         this.nombresEmpleado = nombresEmpleado;
         this.telefonoEmpleado = telefonoEmpleado;
         this.emailEmpleado = emailEmpleado;
         this.contrasenaEmpleado = contrasenaEmpleado;
+        this.fotoPerfil = fotoPerfil;
     }
 
     public int getDPIEmpleado() {
@@ -57,6 +59,14 @@ public class Empleado {
 
     public void setContrasenaEmpleado(String contrasenaEmpleado) {
         this.contrasenaEmpleado = contrasenaEmpleado;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
     }
     
 }
