@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css%22%3E">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link rel=stylesheet type="text/css" href="css/styleVistas.css">
         <title>Vista Clientes</title>
     </head>
@@ -19,7 +19,7 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <h2 class="text-center">Cliente</h2>
+                    <h2 class="text-center">Clientes</h2>
                     <br>
                     <form action="Controlador?menu=Cliente" method="POST">
                         <div class="form-group">
@@ -59,8 +59,8 @@
                             <td class="table-primary text-center">NIT</td>
                             <td class="table-primary text-center">NOMBRES</td>
                             <td class="table-primary text-center">APELLIDOS</td>
-                            <td class="table-primary text-center">DIRECCION</td>
-                            <td class="table-primary text-center">TELEFONO</td>
+                            <td class="table-primary text-center">DIRECCIÓN</td>
+                            <td class="table-primary text-center">TELÉFONO</td>
                             <td class="table-primary text-center">EMAIL</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>
@@ -75,8 +75,8 @@
                                 <td class="text-center table-light">${cliente.getTelefonoCliente()}</td>
                                 <td class="text-center table-light">${cliente.getEmailCliente()}</td>
                                 <td>
-                                    <a class="btn btn-warning bi bi-pencil-fill" href="">Editar</a>
-                                    <a class="btn btn-danger bi bi-trash-fill" href="">Eliminar</a>
+                                    <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
+                                    <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
