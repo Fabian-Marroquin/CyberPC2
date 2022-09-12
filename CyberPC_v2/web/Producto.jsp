@@ -19,29 +19,29 @@
         <div class="card col-sm-4">
             <div class="card-body">
                 
-                     <h2 class="text-center">Facturas</h2>
+                     <h2 class="text-center">Productos</h2>
                     <br>
                     <form action="Controlador?menu=Producto" method="POST">
 
                             <div class="form-group">
-                            <label> NOMBRE:</label>
-                                <input type = "text" name = "txtNombreProducto" class="form-control">
+                            <label> Nombre:</label>
+                                <input type = "text" value="${producto.getNombreProducto()}" name = "txtNombreProducto" class="form-control">
                             </div>
                              <div class="form-group">
-                                 <label> STOCK:</label>
-                                <input type = "text" name = "txtStock" class="form-control">
+                                 <label> Stock:</label>
+                                <input type = "text" value="${producto.getStock()}" name = "txtStock" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label> PRECIO:</label>
-                                <input type = "text" name = "txtPrecio" class="form-control">
+                                <label> Precio:</label>
+                                <input type = "text" value="${producto.getPrecioUnitario()}" name = "txtPrecio" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label> TIPO DE PRODUCTO:</label>
-                                <input type = "text" name = "txtTipoProducto" class="form-control">
+                                <label> Tipo de producto:</label>
+                                <input type = "text" value="${producto.getCodigoTipoProducto()}" name = "txtTipoProducto" class="form-control">
                             </div>
                              <div class="form-group">
-                                <label> MARCA:</label>
-                                <input type = "text" name = "txtMarca" class="form-control">
+                                <label> Marca:</label>
+                                <input type = "text" value="${producto.getCodigoMarca()}" name = "txtMarca" class="form-control">
                             </div>
                             <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
                         <button type="submit" name="accion" value="Actualizar" class="bi bi-person-check-fill btn btn-success"> Actualizar</button>
@@ -53,7 +53,7 @@
                     <thead>
                     <br>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">NOMBRE</td>
                             <td class="table-primary text-center">STOCK</td>
                             <td class="table-primary text-center">PRECIO</td>
@@ -74,10 +74,9 @@
                             <td class="text-center table-light">${producto.getCodigoMarca()}</td>
                             
                             
-                            <td>
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
-                            </td>
+                            <td class="text-center table-light">
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Producto&accion=Eliminar&codigoProducto=${producto.getCodigoProducto()}"> Eliminar</a>
                         </tr>
                         </c:forEach>
                     </tbody>
