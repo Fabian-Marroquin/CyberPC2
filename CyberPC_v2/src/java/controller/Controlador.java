@@ -25,30 +25,32 @@ public class Controlador extends HttpServlet {
     Empleado emp = new Empleado();
     EmpleadoDAO empDAO = new EmpleadoDAO();
     int DPI;
-    
+
     Factura fac = new Factura();
     FacturaDAO facDAO = new FacturaDAO();
-    
+
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
-    
+
     Cliente cliente = new Cliente();
     ClienteDAO clienteDAO = new ClienteDAO();
-    
+
     TipoProducto tipoproducto = new TipoProducto();
     TipoProductoDAO tipoproductoDAO = new TipoProductoDAO();
-    
+    int codTipoProducto;
+
     TipoPago tipPago = new TipoPago();
     TipoPagoDAO tipPagoDAO = new TipoPagoDAO();
-    
+
     DetalleFactura dFac = new DetalleFactura();
     DetalleFacturaDAO dFacDAO = new DetalleFacturaDAO();
-    
+
     Sucursal suc = new Sucursal();
     SucursalDAO sucDAO = new SucursalDAO();
 
     Marca marca = new Marca();
     MarcaDAO marcaDAO = new MarcaDAO();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -97,22 +99,22 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
 
                     break;
-                    
+
                 case "Editar":
-                    
+
                     DPI = Integer.parseInt(request.getParameter("DPIEmpleado"));
                     Empleado e = empDAO.listarCodigoEmpleado(DPI);
                     request.setAttribute("empleado", e);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
-                    
+
                 case "Actualizar":
-                    
+
                     String nombresEmp = request.getParameter("txtNombresEmpleado");
                     String telefonoEmp = request.getParameter("txtTelefonoEmpleado");
                     String emailEmp = request.getParameter("txtEmailEmpleado");
                     String contrasenaEmp = request.getParameter("txtContrasenaLogin");
-                    
+
                     emp.setNombresEmpleado(nombresEmp);
                     emp.setTelefonoEmpleado(telefonoEmp);
                     emp.setEmailEmpleado(emailEmp);
@@ -120,17 +122,16 @@ public class Controlador extends HttpServlet {
                     emp.setDPIEmpleado(DPI);
                     empDAO.actualizar(emp);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
-                    
-                    
+
                     break;
-                    
+
                 case "Eliminar":
-                    
+
                     DPI = Integer.parseInt(request.getParameter("DPIEmpleado"));
                     empDAO.eliminar(DPI);
                     request.getRequestDispatcher("Controlador?menu=Empleado&accion=Listar").forward(request, response);
                     break;
-                    
+
             }
 
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
@@ -234,6 +235,29 @@ public class Controlador extends HttpServlet {
                     tipoproductoDAO.agregar(tipoproducto);
                     request.getRequestDispatcher("Controlador?menu=TipoProducto&accion=Listar").forward(request, response);
                     break;
+
+                case "Editar":
+                    codTipoProducto = Integer.parseInt(request.getParameter("codigoTipoProducto"));
+                    TipoProducto e = tipoproductoDAO.listarCodigoTipoProducto(codTipoProducto);
+                    request.setAttribute("tipoproducto", e);
+                    request.getRequestDispatcher("Controlador?menu=TipoProducto&accion=Listar").forward(request, response);
+                    break;
+
+                case "Actualizar":
+                    String descripcionTp = request.getParameter("txttipoProducto");
+
+                    tipoproducto.setDescripcionTipoProducto(descripcionTp);
+
+                    tipoproducto.setCodigoTipoProducto(codTipoProducto);
+                    tipoproductoDAO.actualizar(tipoproducto);
+                    request.getRequestDispatcher("Controlador?menu=TipoProducto&accion=Listar").forward(request, response);
+                    break;
+
+                case "Eliminar":
+                    codTipoProducto = Integer.parseInt(request.getParameter("codigoTipoProducto"));
+                    tipoproductoDAO.eliminar(codTipoProducto);
+                    request.getRequestDispatcher("Controlador?menu=TipoProducto&accion=Listar").forward(request, response);
+                    break;
             }
             request.getRequestDispatcher("TipoProducto.jsp").forward(request, response);
         } else if (menu.equals("TipoPago")) {
@@ -272,13 +296,13 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("DetalleFactura.jsp").forward(request, response);
-        }else if(menu.equals("Sucursal")){
-            switch(accion){
+        } else if (menu.equals("Sucursal")) {
+            switch (accion) {
                 case "Listar":
                     List listaSucursal = sucDAO.Listar();
                     request.setAttribute("Sucursales", listaSucursal);
                     break;
-                    
+
                 case "Agregar":
                     String nombreSucursal = request.getParameter("txtNombreSucursal");
                     String direccionSucursal = request.getParameter("txtDireccionSucursal");
@@ -289,20 +313,20 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Sucursal.jsp").forward(request, response);
-        }else if(menu.equals("Marca")){
-            switch(accion){
+        } else if (menu.equals("Marca")) {
+            switch (accion) {
                 case "Listar":
-                        List listaMarca = marcaDAO.Listar();
-                        request.setAttribute("marca", listaMarca);
-                        break;
+                    List listaMarca = marcaDAO.Listar();
+                    request.setAttribute("marca", listaMarca);
+                    break;
                 case "Agregar":
-                        String descripcion = request.getParameter("txtDescripcion");
-                        marca.setDescripcionMarca(descripcion);
-                        marcaDAO.Agregar(marca);
-                        request.getRequestDispatcher("Controlador?menu=Marca&accion=Listar").forward(request, response);
-                        break;       
+                    String descripcion = request.getParameter("txtDescripcion");
+                    marca.setDescripcionMarca(descripcion);
+                    marcaDAO.Agregar(marca);
+                    request.getRequestDispatcher("Controlador?menu=Marca&accion=Listar").forward(request, response);
+                    break;
             }
-            
+
             request.getRequestDispatcher("Marca.jsp").forward(request, response);
         }
 

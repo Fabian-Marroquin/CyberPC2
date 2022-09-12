@@ -1,0 +1,68 @@
+/* 
+    Created on : 2/09/2022, 09:06:06 PM
+    Author     : Gerson Matta
+*/
+
+@font-face {
+    font-family: Code;
+    src: url(../fonts/CODE\ Bold.otf);
+}
+
+@font-face {
+    font-family: Rockford;
+    src: url(../fonts/RockfordSans-Light.otf);
+}
+
+@font-face {
+    font-family: Cafe;
+    src: url(../fonts/Louis\ George\ Cafe.ttf);
+}
+
+h2{
+    
+    font-size: 50px;
+    font-family: Code;
+    background-color: #212529;
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 12px;
+    
+}
+
+label{
+    
+    font-family: Rockford;
+    font-size: 20px;
+    
+}
+
+.col-sm-8{
+    
+    background-color: #F5F5F5;
+    
+}
+
+table{
+    
+    font-size: 17px;
+    font-family: Cafe;
+    border: black 2.5px solid; 
+    background-color: #E5E5E5;
+    
+}
+
+
+
+thead tr td{
+    
+    border: black 2.5px solid; 
+    font-weight: bold;
+    
+}
+
+tbody tr td{
+    
+    border: 1.5px solid;
+    
+}
+
