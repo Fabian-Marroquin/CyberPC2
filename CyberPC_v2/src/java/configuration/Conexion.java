@@ -13,7 +13,7 @@ public class Conexion {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBCyberPC_v2?useSSL=false", "root", "ring2022");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBCyberPC_v2?useSSL=false", "root", "Turco20043031");
 
         } catch (Exception e) {
 

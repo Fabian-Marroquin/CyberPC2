@@ -116,5 +116,91 @@ public class EmpleadoDAO {
         return resp;
 
     }
+    
+    /*--------------------------- BUSCAR ---------------------------*/
+    
+    public Empleado listarCodigoEmpleado(int id){
+    
+        Empleado emp = new Empleado();
+        String sql = "SELECT * FROM Empleado WHERE DPIEmpleado = "+id;
+        
+        try{
+            
+            con = cn.Conexion();
+            ps =  con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+            
+                emp.setDPIEmpleado(rs.getInt(1));
+                emp.setNombresEmpleado(rs.getString(2));
+                emp.setTelefonoEmpleado(rs.getString(3));
+                emp.setEmailEmpleado(rs.getString(4));
+                emp.setContrasenaEmpleado(rs.getString(5));
+            
+            }
+        
+        }catch(Exception e){
+        
+            e.printStackTrace();
+            System.out.println("No se pudo buscar el empleado");
+        
+        }
+        
+        return emp;
+        
+    }
+    
+    /*--------------------------- ACTUALIZAR ---------------------------*/
+    
+    public int actualizar(Empleado emp){
+    
+        String sql = "UPDATE Empleado set nombresEmpleado = ?, telefonoEmpleado = ?, emailEmpleado = ?, contrasenaLogin = ? where DPIEmpleado = ?";
+        
+        try{
+        
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1, emp.getNombresEmpleado());
+            ps.setString(2, emp.getTelefonoEmpleado());
+            ps.setString(3, emp.getEmailEmpleado());
+            ps.setString(4, emp.getContrasenaEmpleado());
+            ps.setInt(5, emp.getDPIEmpleado());
+            
+            ps.executeUpdate();
+        
+        }catch(Exception e){
+        
+            e.printStackTrace();
+        
+        }
+        
+        return resp;
+        
+    }
+    
+    /*--------------------------- ELIMINAR ---------------------------*/
+    
+    public void eliminar(int id){
+    
+        String sql = "DELETE FROM Empleado where DPIEmpleado = "+id;
+        
+        try{
+        
+            con = cn.Conexion();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        
+        }catch(Exception e){
+        
+            e.printStackTrace();
+        
+        }
+    
+    
+    }
 
 }
+
+
