@@ -50,6 +50,7 @@ public class Controlador extends HttpServlet {
 
     Sucursal suc = new Sucursal();
     SucursalDAO sucDAO = new SucursalDAO();
+    int codSucursal;
 
     Marca marca = new Marca();
     MarcaDAO marcaDAO = new MarcaDAO();
@@ -392,6 +393,29 @@ public class Controlador extends HttpServlet {
                     suc.setNombreSucursal(nombreSucursal);
                     suc.setDireccionSucursal(direccionSucursal);
                     sucDAO.Agregar(suc);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Editar":
+                    codSucursal = Integer.parseInt(request.getParameter("codigoSucursal"));
+                    Sucursal sur = sucDAO.listarCodigoSucursal(codSucursal);
+                    request.setAttribute("sucursal", sur);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Actualizar":
+                    String nombreSuc = request.getParameter("txtNombreSucursal");
+                    String direccionSuc = request.getParameter("txtDireccionSucursal");
+                    suc.setNombreSucursal(nombreSuc);
+                    suc.setDireccionSucursal(direccionSuc);
+                    suc.setCodigoSucursal(codSucursal);
+                    sucDAO.Actualizar(suc);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+                
+                case "Eliminar":
+                    codSucursal = Integer.parseInt(request.getParameter("codigoSucursal"));
+                    sucDAO.Eliminar(codSucursal);
                     request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
                     break;
             }
