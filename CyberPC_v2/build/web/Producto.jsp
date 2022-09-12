@@ -25,15 +25,15 @@
 
                             <div class="form-group">
                             <label> Nombre:</label>
-                                <input type = "text" name = "txtNombreProducto" class="form-control">
+                                <input type = "text" value="${producto.getNombreProducto()}" name = "txtNombreProducto" class="form-control">
                             </div>
                              <div class="form-group">
                                  <label> Stock:</label>
-                                <input type = "text" name = "txtStock" class="form-control">
+                                <input type = "text" value="${producto.getStock()}" name = "txtStock" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label> Precio:</label>
-                                <input type = "text" name = "txtPrecio" class="form-control">
+                                <input type = "text" value="${producto.getPrecioUnitario()}" name = "txtPrecio" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label> Tipo de producto:</label>
@@ -75,9 +75,8 @@
                             
                             
                             <td class="text-center table-light">
-                                <a class="btn btn-warning bi bi-pencil-fill" href=""> Editar</a>
-                                <a class="btn btn-danger bi bi-trash-fill" href=""> Eliminar</a>
-                            </td>
+                                <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=Producto&accion=Editar&codigoProducto=${producto.getCodigoProducto()}"> Editar</a>
+                                <a class="btn btn-danger bi bi-trash-fill" href="Controlador?menu=Producto&accion=Eliminar&codigoProducto=${producto.getCodigoProducto()}"> Eliminar</a>
                         </tr>
                         </c:forEach>
                     </tbody>

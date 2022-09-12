@@ -31,6 +31,7 @@ public class Controlador extends HttpServlet {
 
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
+    int codProducto;
 
     Cliente cliente = new Cliente();
     ClienteDAO clienteDAO = new ClienteDAO();
@@ -189,6 +190,33 @@ public class Controlador extends HttpServlet {
                     productoDAO.Agregar(producto);
                     request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
 
+                    break;
+                    
+                    case "Editar":
+                    codProducto = Integer.parseInt(request.getParameter("codigoProducto"));
+                    Producto p = productoDAO.listarCodigoProducto(codProducto);
+                    request.setAttribute("producto", p);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Actualizar":
+                    String nombreP = request.getParameter("txtNombreProducto");
+                    String stockP = request.getParameter("txtStock");
+                    String precioP = request.getParameter("txtPrecio");
+                    
+                    producto.setNombreProducto(nombreP);
+                    producto.setStock(Integer.parseInt(stockP));
+                    producto.setPrecioUnitario(Double.parseDouble(precioP));
+                  
+                    producto.setCodigoProducto(codProducto);
+                    productoDAO.actualizar(producto);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Eliminar":
+                    codProducto = Integer.parseInt(request.getParameter("codigoProducto"));
+                    productoDAO.eliminar(codProducto);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=Listar").forward(request, response);
                     break;
 
             }
