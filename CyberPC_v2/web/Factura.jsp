@@ -36,11 +36,11 @@
                             <input type="text" name="txtDPIEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Codigo Tipo de Pago:</label>
+                            <label>Código Tipo de Pago:</label>
                             <input type="text" name="txtCodigoTipoPago" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Codigo Sucursal:</label>
+                            <label>Código Sucursal:</label>
                             <input type="text" name="txtCodigoSucursal" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info"> Agregar</button>
@@ -53,7 +53,7 @@
                     <thead>
                     <br>
                         <tr>
-                            <td class="table-primary text-center">CODIGO</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">FECHA</td>
                             <td class="table-primary text-center">NIT</td>
                             <td class="table-primary text-center">DPIEmpleado</td>

@@ -44,31 +44,31 @@
                         
                         <li class="nav-item">
 
-                            <a class="nav-link bi bi-handbag-fill" href="" target="myFrame"> Producto</a>
+                            <a class="nav-link bi bi-handbag-fill" href="Controlador?menu=Producto&accion=Listar" target="myFrame"> Producto</a>
 
                         </li>
                         
                         <li class="nav-item">
                             
-                           <a class="nav-link bi bi-bag-plus-fill" href="" target="myFrame"> Tipo Producto</a>
+                           <a class="nav-link bi bi-bag-plus-fill" href="Controlador?menu=TipoProducto&accion=Listar" target="myFrame"> Tipo Producto</a>
                             
                         </li>
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-tags-fill" href="" target="myFrame" > Marca</a>
+                            <a class="nav-link bi bi-tags-fill" href="Controlador?menu=Marca&accion=Listar" target="myFrame" > Marca</a>
                             
                         </li>
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link " href="" target="myFrame"> Sucursal</a>
+                            <a class="nav-link bi bi-tags-fill" href="Controlador?menu=Sucursal&accion=Listar" target="myFrame"> Sucursal</a>
                             
                         </li>
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-credit-card-2-back-fill" href="" target="myFrame"> Tipo Pago</a>
+                            <a class="nav-link bi bi-credit-card-2-back-fill" href="Controlador?menu=TipoPago&accion=Listar" target="myFrame"> Tipo Pago</a>
                             
                         </li>
                         
@@ -80,13 +80,13 @@
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-file-text-fill" href="" target="myFrame"> Detalle Factura</a>
+                            <a class="nav-link bi bi-file-text-fill" href="Controlador?menu=DetalleFactura&accion=Listar" target="myFrame"> Detalle Factura</a>
                             
                         </li>
                         
                         <li class="nav-item">
                             
-                            <a class="nav-link bi bi-person-fill" href="" target="myFrame" > Cliente</a>
+                            <a class="nav-link bi bi-person-fill" href="Controlador?menu=Cliente&accion=Listar" target="myFrame" > Cliente</a>
                             
                         </li>
                         
