@@ -48,9 +48,9 @@
                     <tbody>
                         <c:forEach var="tipoproducto" items="${tipoProductos}">
                             <tr>
-                                <td>${tipoproducto.getCodigoTipoProducto()}</td>
-                                <td>${tipoproducto.getDescripcionTipoProducto()}</td>
-                                <td>
+                                <td class="text-center table-light">${tipoproducto.getCodigoTipoProducto()}</td>
+                                <td class="text-center table-light">${tipoproducto.getDescripcionTipoProducto()}</td>
+                                <td class="text-center table-light">
                                     <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=TipoProducto&accion=Editar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}"href="Controlador?menu=TipoProducto&accion=Eliminar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}">Editar</a>
                                     <a class="btn btn-danger bi bi-trash-fill"  href="Controlador?menu=TipoProducto&accion=Eliminar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}">Eliminar</a>
                                 </td>
