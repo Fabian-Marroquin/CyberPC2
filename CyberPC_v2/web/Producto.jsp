@@ -14,7 +14,7 @@
         <link rel=stylesheet type="text/css" href="css/styleVistas.css">
         <title>Productos</title>
     </head>
-    <body style="background: transparent">
+    <body >
         <div class="d-flex">
         <div class="card col-sm-4">
             <div class="card-body">
