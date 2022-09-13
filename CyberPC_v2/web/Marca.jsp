@@ -37,7 +37,7 @@
                     <thead>
                     <br>
                         <tr>
-                            <td class="table-primary text-center">CÓDIGO MARCA</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">DESCRIPCIÓN MARCA</td>
                             <td class="table-primary text-center">ACCIONES</td>
                         </tr>

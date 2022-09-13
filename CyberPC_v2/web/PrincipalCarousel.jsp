@@ -32,7 +32,7 @@
                 
                 <div class="carousel-item active">
                     
-                  <img src="img/Foto1.jpg" class="d-block w-100" >
+                  <img src="img/Foto1G.jpg" class="d-block w-100" >
                   
                     <!-- 
                     <div class="carousel-caption d-none d-md-block">
@@ -47,7 +47,7 @@
                 
                 <div class="carousel-item">
                     
-                  <img src="img/Foto2.jpg" class="d-block w-100" >
+                  <img src="img/Foto2G.jpg" class="d-block w-100" >
                     
                     <!-- 
                     <div class="carousel-caption d-none d-md-block">
@@ -62,7 +62,7 @@
                 
                 <div class="carousel-item">
                     
-                  <img src="img/Foto3.jpg" class="d-block w-100" >
+                  <img src="img/Foto3G.jpg" class="d-block w-100" >
                   
                   <!-- 
                   <div class="carousel-caption d-none d-md-block">

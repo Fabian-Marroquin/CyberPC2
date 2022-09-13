@@ -32,7 +32,7 @@
                     <form action="Controlador?menu=TipoPago" method="POST">
                         
                         <div class="form-group">
-                            <label>Tipo de Pago:</label>
+                            <label>Tipo De Pago:</label>
                             <input type="next" value="${tiposPago.getDescripcionTipoPago()}" name="txtTipoPago" class="form-control">
                         </div>
                         
@@ -54,8 +54,8 @@
                         
                         <tr>
                             
-                            <td class="table-primary text-center">CÓDIGO:</td>
-                            <td class="table-primary text-center">TIPO DE PAGO:</td>
+                            <td class="table-primary text-center">CÓDIGO</td>
+                            <td class="table-primary text-center">TIPO DE PAGO</td>
                             <td class="table-primary text-center">ACCIONES</td>
                             
                         </tr>

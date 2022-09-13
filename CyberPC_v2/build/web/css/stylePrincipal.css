@@ -3,7 +3,7 @@
     Author     : Aarón Matta
 */
 
-body{
+/*body{
     
     background: linear-gradient(-45deg, #192abf, #21a8f4, #6876aa, #343d68);
     background-size: 400% 400%;
@@ -25,4 +25,10 @@ body{
     }
 }
 
+*/
 
+body{
+    
+    background-color: black;
+    
+}

@@ -135,7 +135,7 @@
 
         <div class="" style="margin: 0;padding: 0;height: 100vh">
 
-            <iframe src="PrincipalCarousel.jsp" name="myFrame" style="margin: 0; height: 100%; width: 100%;"></iframe>
+            <iframe src="PrincipalCarousel.jsp" name="myFrame" style="margin: 0; height: 150%; width: 100%;"></iframe>
 
         </div>
 
