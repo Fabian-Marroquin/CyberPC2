@@ -24,7 +24,7 @@
                     <br>
                     <form action="Controlador?menu=TipoProducto" method="POST">
                         <div class="form-group">
-                            <label>DESCRIPCION TIPO PRODUCTO:</label>
+                            <label>Descripción Tipo Producto:</label>
                             <input type="text" value="${tipoproducto.getDescripcionTipoProducto()}" name="txttipoProducto" class="form-control">
                         </div>
                         <button type="submit" name="accion" value="Agregar" class="bi bi-person-plus-fill btn btn-info">Agregar</button>
@@ -39,8 +39,8 @@
                     <br>
 
                     <tr>
-                        <td class="table-primary text-center">CODIGO</td>
-                        <td class="table-primary text-center">DESCRIPCION</td>
+                        <td class="table-primary text-center">CÓDIGO</td>
+                        <td class="table-primary text-center">DESCRIPCIÓN</td>
                         <td class="table-primary text-center">ACCIONES</td>
                     </tr>
 
@@ -48,9 +48,9 @@
                     <tbody>
                         <c:forEach var="tipoproducto" items="${tipoProductos}">
                             <tr>
-                                <td>${tipoproducto.getCodigoTipoProducto()}</td>
-                                <td>${tipoproducto.getDescripcionTipoProducto()}</td>
-                                <td>
+                                <td class="text-center table-light">${tipoproducto.getCodigoTipoProducto()}</td>
+                                <td class="text-center table-light">${tipoproducto.getDescripcionTipoProducto()}</td>
+                                <td class="text-center table-light">
                                     <a class="btn btn-warning bi bi-pencil-fill" href="Controlador?menu=TipoProducto&accion=Editar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}"href="Controlador?menu=TipoProducto&accion=Eliminar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}">Editar</a>
                                     <a class="btn btn-danger bi bi-trash-fill"  href="Controlador?menu=TipoProducto&accion=Eliminar&codigoTipoProducto=${tipoproducto.getCodigoTipoProducto()}">Eliminar</a>
                                 </td>

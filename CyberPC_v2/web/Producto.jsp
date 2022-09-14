@@ -14,7 +14,7 @@
         <link rel=stylesheet type="text/css" href="css/styleVistas.css">
         <title>Productos</title>
     </head>
-    <body style="background: transparent">
+    <body >
         <div class="d-flex">
         <div class="card col-sm-4">
             <div class="card-body">
@@ -36,7 +36,7 @@
                                 <input type = "text" value="${producto.getPrecioUnitario()}" name = "txtPrecio" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label> Tipo de producto:</label>
+                                <label> Tipo De Producto:</label>
                                 <input type = "text" value="${producto.getCodigoTipoProducto()}" name = "txtTipoProducto" class="form-control">
                             </div>
                              <div class="form-group">

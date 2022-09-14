@@ -16,7 +16,7 @@
         <link rel=stylesheet type="text/css" href="css/styleVistas.css">
         <title>Factura</title>
     </head>
-    <body style="background: transparent">
+    <body>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
@@ -36,7 +36,7 @@
                             <input type="text" value="${factura.getDPIEmpleado()}" name="txtDPIEmpleado" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Código Tipo de Pago:</label>
+                            <label>Código Tipo De Pago:</label>
                             <input type="text" value="${factura.getCodigoTipoPago()}" name="txtCodigoTipoPago" class="form-control">
                         </div>
                         <div class="form-group">
@@ -56,7 +56,7 @@
                             <td class="table-primary text-center">CÓDIGO</td>
                             <td class="table-primary text-center">FECHA</td>
                             <td class="table-primary text-center">NIT</td>
-                            <td class="table-primary text-center">DPIEmpleado</td>
+                            <td class="table-primary text-center">DPI EMPLEADO</td>
                             <td class="table-primary text-center">PAGO</td>
                             <td class="table-primary text-center">SUCURSAL</td>
                             <td class="table-primary text-center">ACCIONES</td>
